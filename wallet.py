@@ -87,3 +87,12 @@ def get_wallet_by_email(email: str, db: Session = Depends(get_db)):
     if not wallet:
         raise HTTPException(status_code=404, detail="Wallet not found")
     return wallet
+
+
+@app.get("/script", response=bool)
+def script_determinate():
+    """
+    Endpoint to determine if the script is running.
+    Returns True if the script is running, otherwise False.
+    """
+    return True
