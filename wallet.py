@@ -89,8 +89,8 @@ def get_wallet_by_email(email: str, db: Session = Depends(get_db)):
     return wallet
 
 
-@app.get("/script", response=bool)
-def script_determinate():
+@app.get("/script")
+def script_determinate()->bool:
     """
     Endpoint to determine if the script is running.
     Returns True if the script is running, otherwise False.
